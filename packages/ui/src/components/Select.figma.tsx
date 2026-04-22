@@ -23,13 +23,16 @@ figma.connect(
     props: {
       disabled: figma.boolean("Disabled"),
       invalid: figma.boolean("Invalid"),
-      hasSelection: figma.boolean("HasSelection"),
+      defaultValue: figma.boolean("HasSelection", {
+        true: "checking",
+        false: undefined,
+      }),
     },
-    example: ({ disabled, invalid, hasSelection }) => (
+    example: ({ disabled, invalid, defaultValue }) => (
       <Select
         options={sampleAccounts}
         placeholder="Select an account"
-        defaultValue={hasSelection ? "checking" : undefined}
+        defaultValue={defaultValue}
         disabled={disabled}
         invalid={invalid}
         aria-label="Account"

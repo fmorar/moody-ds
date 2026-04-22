@@ -153,19 +153,21 @@ Design source: [moody-project](https://www.figma.com/design/Sn6XcCHiq9y4aLYzkJsB
 
 ### Publishing Code Connect mappings
 
-Needs a [Figma personal access token](https://www.figma.com/developers/api#access-tokens) with the `code_connect:write` scope.
+Needs a [Figma personal access token](https://www.figma.com/developers/api#access-tokens) with both **File content: Read** and **Code Connect: Write** scopes, plus a **Dev Mode seat on a Figma Organization or Enterprise plan** (the API is gated behind that).
 
 ```sh
 export FIGMA_ACCESS_TOKEN=figd_xxxxxxxxxxxxxxxx
 
-# validate without pushing
+# validate without pushing (works on any plan)
 npm run -w @fmorar/moody-ui figma:validate
 
 # publish — uploads every Button.figma.tsx / Input.figma.tsx / … to Figma
 npm run -w @fmorar/moody-ui figma:publish
 ```
 
-Designers then see real code snippets in Figma Dev Mode for each selected component.
+Once published, designers see real React snippets in Figma Dev Mode for each selected component.
+
+**Without a Dev Mode seat:** the `.figma.tsx` files still live in the repo as the versioned source of truth, and each Figma component set carries a link back to its React source in its description (visible in the right-side panel when the component is selected). Run `figma:publish` the moment the plan upgrades and every mapping goes live at once.
 
 ## Releasing
 

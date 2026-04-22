@@ -7,16 +7,22 @@ figma.connect(
   {
     props: {
       placeholder: figma.string("Value"),
-      hasLeading: figma.boolean("HasLeading"),
-      hasTrailing: figma.boolean("HasTrailing"),
+      leading: figma.boolean("HasLeading", {
+        true: "$",
+        false: undefined,
+      }),
+      trailing: figma.boolean("HasTrailing", {
+        true: "USD",
+        false: undefined,
+      }),
       invalid: figma.boolean("Invalid"),
       disabled: figma.boolean("Disabled"),
     },
-    example: ({ placeholder, hasLeading, hasTrailing, invalid, disabled }) => (
+    example: ({ placeholder, leading, trailing, invalid, disabled }) => (
       <Input
         placeholder={placeholder}
-        leading={hasLeading ? "$" : undefined}
-        trailing={hasTrailing ? "USD" : undefined}
+        leading={leading}
+        trailing={trailing}
         invalid={invalid}
         disabled={disabled}
       />

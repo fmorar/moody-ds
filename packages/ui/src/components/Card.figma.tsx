@@ -14,24 +14,30 @@ figma.connect(
   "https://www.figma.com/design/Sn6XcCHiq9y4aLYzkJsBkW/moody-project?node-id=17-112",
   {
     props: {
-      hasHeader: figma.boolean("HasHeader"),
-      hasFooter: figma.boolean("HasFooter"),
       interactive: figma.boolean("Interactive"),
-    },
-    example: ({ hasHeader, hasFooter, interactive }) => (
-      <Card interactive={interactive}>
-        {hasHeader ? (
+      header: figma.boolean("HasHeader", {
+        true: (
           <CardHeader>
             <CardTitle>Card title</CardTitle>
             <CardDescription>Card description</CardDescription>
           </CardHeader>
-        ) : null}
-        <CardBody>Card body content.</CardBody>
-        {hasFooter ? (
+        ),
+        false: undefined,
+      }),
+      footer: figma.boolean("HasFooter", {
+        true: (
           <CardFooter className="justify-end">
             <Button>Next</Button>
           </CardFooter>
-        ) : null}
+        ),
+        false: undefined,
+      }),
+    },
+    example: ({ interactive, header, footer }) => (
+      <Card interactive={interactive}>
+        {header}
+        <CardBody>Card body content.</CardBody>
+        {footer}
       </Card>
     ),
   },
