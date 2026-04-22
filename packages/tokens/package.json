@@ -1,6 +1,6 @@
 {
   "name": "@fmorar/moody-tokens",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Moody design system — design tokens (colors, spacing, radius, shadows, motion, typography).",
   "license": "MIT",
   "type": "module",
