@@ -2,12 +2,14 @@
 
 A small, opinionated React design system anchored to the Moody's brand. Two publishable packages, two dev-only apps, one cohesive token model that flips between light and dark with a class.
 
+Published releases live at **https://github.com/fmorar?tab=packages**.
+
 ## Packages
 
-| Package | Published | Purpose |
+| Package | Version | Purpose |
 | --- | --- | --- |
-| [`@fmorar/moody-tokens`](./packages/tokens) | ✓ | Design tokens: color primitives (navy + neutral), semantic color roles, typography stacks, spacing, radius, shadows, motion, and z-index — as CSS variables and TS constants. |
-| [`@fmorar/moody-ui`](./packages/ui) | ✓ | React components: `Button`, `IconButton`, `Input`, `Switch`, `Separator`, `Avatar`, `Card`, `Select`. Styled exclusively with semantic token utilities so light/dark is free. |
+| [`@fmorar/moody-tokens`](https://github.com/fmorar/moody-ds/pkgs/npm/moody-tokens) | `0.1.0` | Design tokens: color primitives (navy + neutral), semantic color roles, typography stacks, spacing, radius, shadows, motion, and z-index — as CSS variables and TS constants. |
+| [`@fmorar/moody-ui`](https://github.com/fmorar/moody-ds/pkgs/npm/moody-ui) | `0.1.0` | React components: `Button`, `IconButton`, `Input`, `Switch`, `Separator`, `Avatar`, `Card`, `Select`. Styled exclusively with semantic token utilities so light/dark is free. |
 
 ## Apps (dev tools, not published)
 
@@ -37,6 +39,8 @@ Export the token in your shell (or your CI secret):
 ```sh
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxx
 ```
+
+> **Security note.** Keep the `${GITHUB_TOKEN}` placeholder in the committed `.npmrc` — never paste the raw token into a file that gets checked in. For local dev, set the env var in your shell rc (`~/.zshrc`); for CI, use a repository/organization secret. If you prefer, add `.npmrc` to `.gitignore` and generate it on demand.
 
 ### 3. Install
 
@@ -158,6 +162,12 @@ git push origin main --tags
 ```
 
 The workflow fires on any `v*.*.*` tag push: builds both packages and publishes them to GitHub Packages under the `@fmorar` scope using the built-in `GITHUB_TOKEN` (no extra secret needed). The workflow can also be triggered manually from the Actions tab (`workflow_dispatch`).
+
+### Package visibility
+
+GitHub Packages inherits its default visibility from the source repository. Because `fmorar/moody-ds` is public, the first release of each package is **public** — anyone with a `read:packages` token can install them.
+
+To make a package private after the fact: go to https://github.com/fmorar?tab=packages → the package → **Package settings** → **Change package visibility** → **Private**. Consumers then need a PAT tied to an account with explicit access to the package.
 
 See [`ds-release`](./.claude/skills/ds-release/SKILL.md) for the versioning + breaking-change matrix.
 
