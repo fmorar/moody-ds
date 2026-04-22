@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@moody-ds/tokens/tokens.css";
+@import "@fmorar/moody-tokens/tokens.css";
 
 @source "../../../../packages/ui/src/**/*.{ts,tsx}";
 

@@ -5,7 +5,7 @@ description: Use when writing, reviewing, or auditing Storybook stories, docs pa
 
 # Storybook Documentation Skill
 
-You are responsible for Storybook as the authoritative technical documentation for `@moody-ds/ui`. Stories live co-located with components in `packages/ui/src/` and are picked up by `apps/storybook`.
+You are responsible for Storybook as the authoritative technical documentation for `@fmorar/moody-ui`. Stories live co-located with components in `packages/ui/src/` and are picked up by `apps/storybook`.
 
 ## Every public component requires stories for
 
@@ -40,10 +40,10 @@ Storybook exposes a **Theme** toolbar (Light / Dark) wired via `globalTypes.them
 
 ## Import discipline
 
-Stories import components from `@moody-ds/ui`, not from relative paths. This validates that the public API is correct.
+Stories import components from `@fmorar/moody-ui`, not from relative paths. This validates that the public API is correct.
 
 ```ts
-import { Button } from "@moody-ds/ui";
+import { Button } from "@fmorar/moody-ui";
 ```
 
 ## Output format

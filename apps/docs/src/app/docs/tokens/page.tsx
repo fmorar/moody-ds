@@ -8,9 +8,9 @@ import {
   semantic,
   space,
   zIndex,
-} from "@moody-ds/tokens";
+} from "@fmorar/moody-tokens";
 import { ChevronRight } from "lucide-react";
-import { Separator } from "@moody-ds/ui";
+import { Separator } from "@fmorar/moody-ui";
 
 type SemanticPair = {
   bg: string;
@@ -76,7 +76,7 @@ export default function TokensOverviewPage() {
         </h1>
         <p className="text-lg text-muted-foreground">
           Every design token available to components in{" "}
-          <code className="rounded bg-muted px-1 text-sm">@moody-ds/ui</code>.
+          <code className="rounded bg-muted px-1 text-sm">@fmorar/moody-ui</code>.
           Grouped into <b>Colors</b>, <b>Typography</b>, <b>Spacing</b>,{" "}
           <b>Radius</b>, and <b>Effects &amp; motion</b>. Colors + shadows flip
           with the theme; everything else is constant.

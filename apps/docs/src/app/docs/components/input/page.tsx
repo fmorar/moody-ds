@@ -1,4 +1,4 @@
-import { Input } from "@moody-ds/ui";
+import { Input } from "@fmorar/moody-ui";
 import { Preview } from "@/components/preview";
 import { PropsTable, type PropRow } from "@/components/props-table";
 

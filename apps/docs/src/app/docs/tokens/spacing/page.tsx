@@ -1,4 +1,4 @@
-import { space } from "@moody-ds/tokens";
+import { space } from "@fmorar/moody-tokens";
 
 export default function SpacingPage() {
   const entries = Object.entries(space);

@@ -11,7 +11,7 @@ export default function InstallationPage() {
         <p className="text-lg text-muted-foreground">
           Install the packages and import components directly from{" "}
           <code className="rounded bg-muted px-1.5 py-0.5 text-base">
-            @moody-ds/ui
+            @fmorar/moody-ui
           </code>
           .
         </p>
@@ -22,7 +22,7 @@ export default function InstallationPage() {
           Install
         </h2>
         <pre className="overflow-x-auto rounded-lg border border-border bg-muted p-4 text-sm text-foreground">
-          <code>npm install @moody-ds/ui @moody-ds/tokens</code>
+          <code>npm install @fmorar/moody-ui @fmorar/moody-tokens</code>
         </pre>
       </section>
 
@@ -37,7 +37,7 @@ export default function InstallationPage() {
           swapping themes only requires toggling a class.
         </p>
         <pre className="overflow-x-auto rounded-lg border border-border bg-muted p-4 text-sm text-foreground">
-          <code>{`import "@moody-ds/tokens/tokens.css";`}</code>
+          <code>{`import "@fmorar/moody-tokens/tokens.css";`}</code>
         </pre>
       </section>
 
@@ -65,7 +65,7 @@ export default function InstallationPage() {
           Import
         </h2>
         <pre className="overflow-x-auto rounded-lg border border-border bg-muted p-4 text-sm text-foreground">
-          <code>{`import { Button } from "@moody-ds/ui";
+          <code>{`import { Button } from "@fmorar/moody-ui";
 
 export function Example() {
   return <Button>Hello</Button>;

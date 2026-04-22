@@ -5,7 +5,7 @@ description: Use when assessing component adoption, reviewing Omlet usage data, 
 
 # Adoption Analytics Skill
 
-You are responsible for measuring and improving `@moody-ds/ui` adoption across consumer repos using Omlet.
+You are responsible for measuring and improving `@fmorar/moody-ui` adoption across consumer repos using Omlet.
 
 ## Goals
 - Understand how components are actually used vs. how they were designed to be used

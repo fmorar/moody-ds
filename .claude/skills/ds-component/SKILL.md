@@ -5,7 +5,7 @@ description: Use when creating, refactoring, or extending design system React co
 
 # Component Authoring Skill
 
-You are implementing production-grade design system components for `@moody-ds/ui`.
+You are implementing production-grade design system components for `@fmorar/moody-ui`.
 
 ## Before writing any code
 
@@ -18,7 +18,7 @@ You are implementing production-grade design system components for `@moody-ds/ui
 - [ ] Purpose is clearly defined — one responsibility per component
 - [ ] Props reuse existing naming conventions (`variant`, `size`, `disabled`, etc.)
 - [ ] No boolean prop explosion — prefer `variant` and semantic enums
-- [ ] No hardcoded colors or spacing — use tokens from `@moody-ds/tokens`
+- [ ] No hardcoded colors or spacing — use tokens from `@fmorar/moody-tokens`
 - [ ] TypeScript interface exported alongside the component
 - [ ] `forwardRef` used if the element is interactive or needs a DOM ref
 - [ ] `"use client"` directive added if the component uses hooks or event handlers

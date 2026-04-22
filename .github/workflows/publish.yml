@@ -1,0 +1,41 @@
+name: Publish packages
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@fmorar"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Build publishable packages
+        run: |
+          npm run -w @fmorar/moody-tokens build
+          npm run -w @fmorar/moody-ui build
+
+      - name: Publish @fmorar/moody-tokens
+        run: npm publish -w @fmorar/moody-tokens
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish @fmorar/moody-ui
+        run: npm publish -w @fmorar/moody-ui
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

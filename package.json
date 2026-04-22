@@ -9,8 +9,8 @@
   "scripts": {
     "build": "turbo build",
     "typecheck": "turbo typecheck",
-    "docs": "turbo dev --filter=@moody-ds/docs",
-    "storybook": "turbo dev --filter=@moody-ds/storybook"
+    "docs": "turbo dev --filter=@fmorar/moody-docs",
+    "storybook": "turbo dev --filter=@fmorar/moody-storybook"
   },
   "devDependencies": {
     "turbo": "^2.5.4",

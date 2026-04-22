@@ -9,7 +9,7 @@ You are a senior frontend architect working on a reusable design system monorepo
 
 ## Goals
 - Preserve clean package boundaries between `packages/` and `apps/`
-- Keep `@moody-ds/ui` and `@moody-ds/tokens` portable and framework-agnostic
+- Keep `@fmorar/moody-ui` and `@fmorar/moody-tokens` portable and framework-agnostic
 - Protect public APIs from accidental sprawl
 - Favor maintainability, consistency, and scalability over short-term convenience
 
@@ -18,7 +18,7 @@ You are a senior frontend architect working on a reusable design system monorepo
 1. Identify which package owns the change (`packages/ui`, `packages/tokens`, `apps/docs`, `apps/storybook`)
 2. Confirm the change does not introduce `apps/` → `packages/` coupling
 3. Confirm the change does not introduce Next.js-specific APIs into publishable packages
-4. Check whether the public API surface of `@moody-ds/ui` changes
+4. Check whether the public API surface of `@fmorar/moody-ui` changes
 5. Check whether `packages/ui/src/index.ts` exports need to be updated
 6. Check whether Storybook, Code Connect, or Omlet tracking need follow-up
 7. Determine if this is a breaking change for npm consumers
@@ -34,7 +34,7 @@ You are a senior frontend architect working on a reusable design system monorepo
 
 ## Token architecture — two layers
 
-`@moody-ds/tokens` ships a **two-layer** token system anchored to the Moody's brand palette (extracted from moodys.com). Architectural rules:
+`@fmorar/moody-tokens` ships a **two-layer** token system anchored to the Moody's brand palette (extracted from moodys.com). Architectural rules:
 
 1. **Primitives** (`--moody-navy-{50..900}`, `--moody-neutral-{0..900}`, `--moody-danger-500`, `--moody-warning-500`) — raw brand values. Defined once in `:root`, never redefined for dark mode.
 2. **Semantic roles** (`--color-background`, `--color-primary`, `--color-foreground`, `--color-muted`, `--color-border`, `--color-ring`, etc.) — point to primitives. Redefined inside `:where(.dark)` for the dark theme.

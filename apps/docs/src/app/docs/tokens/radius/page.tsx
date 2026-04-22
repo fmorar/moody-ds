@@ -1,4 +1,4 @@
-import { radius } from "@moody-ds/tokens";
+import { radius } from "@fmorar/moody-tokens";
 
 export default function RadiusPage() {
   const entries = Object.entries(radius);

@@ -5,7 +5,7 @@
 `moody-ds` is a multi-package design system monorepo.
 
 **Primary goals:**
-- Publish reusable UI components as an npm package (`@moody-ds/ui`)
+- Publish reusable UI components as an npm package (`@fmorar/moody-ui`)
 - Keep the package framework-light and portable — no Next.js coupling
 - Document components in Storybook (`apps/storybook`)
 - Maintain Figma alignment through Code Connect
@@ -16,11 +16,11 @@
 ```
 moody-ds/
   apps/
-    docs/        → @moody-ds/docs   (Next.js live preview, private)
-    storybook/   → @moody-ds/storybook (Storybook, private)
+    docs/        → @fmorar/moody-docs   (Next.js live preview, private)
+    storybook/   → @fmorar/moody-storybook (Storybook, private)
   packages/
-    ui/          → @moody-ds/ui     (publishable npm package)
-    tokens/      → @moody-ds/tokens (publishable npm package)
+    ui/          → @fmorar/moody-ui     (publishable npm package)
+    tokens/      → @fmorar/moody-tokens (publishable npm package)
 ```
 
 ## Architectural rules
@@ -35,7 +35,7 @@ moody-ds/
 
 ## Package publishing rules
 
-- `@moody-ds/ui` and `@moody-ds/tokens` are the only publishable packages
+- `@fmorar/moody-ui` and `@fmorar/moody-tokens` are the only publishable packages
 - Version bumps follow semantic versioning strictly
 - Any change to a public prop name, type, or default is a breaking change (major bump)
 - New props or components are minor bumps

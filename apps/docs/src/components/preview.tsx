@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { cn } from "@moody-ds/ui";
+import { cn } from "@fmorar/moody-ui";
 
 export function Preview({
   children,

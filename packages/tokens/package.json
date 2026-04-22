@@ -1,21 +1,42 @@
 {
-  "name": "@moody-ds/tokens",
+  "name": "@fmorar/moody-tokens",
   "version": "0.1.0",
+  "description": "Moody design system — design tokens (colors, spacing, radius, shadows, motion, typography).",
   "license": "MIT",
   "type": "module",
-  "main": "./src/index.ts",
-  "exports": {
-    ".": "./src/index.ts",
-    "./tokens.css": "./src/tokens.css"
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fmorar/moody-ds.git",
+    "directory": "packages/tokens"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
   },
   "files": [
-    "src"
+    "dist"
   ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tokens.css": "./dist/tokens.css"
+  },
   "scripts": {
-    "build": "echo 'tokens: no build step yet'",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "tsup": "^8.3.5",
     "typescript": "^5.6.0"
   }
 }

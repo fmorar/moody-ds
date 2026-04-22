@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root,
     resolveAlias: {
-      "@moody-ds/ui": "./packages/ui/src/index.ts",
+      "@fmorar/moody-ui": "./packages/ui/src/index.ts",
     },
   },
   experimental: {

@@ -23,7 +23,7 @@ import {
   type SelectOption,
   Separator,
   Switch,
-} from "@moody-ds/ui";
+} from "@fmorar/moody-ui";
 
 type Step = "form" | "review" | "success";
 

@@ -1,4 +1,4 @@
-import { Button } from "@moody-ds/ui";
+import { Button } from "@fmorar/moody-ui";
 import { Preview } from "@/components/preview";
 import { PropsTable, type PropRow } from "@/components/props-table";
 
@@ -43,7 +43,7 @@ export default function ButtonPage() {
       </header>
 
       <Preview
-        code={`import { Button } from "@moody-ds/ui";
+        code={`import { Button } from "@fmorar/moody-ui";
 
 <Button>Click me</Button>`}
       >

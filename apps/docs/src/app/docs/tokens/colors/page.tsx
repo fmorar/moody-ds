@@ -1,4 +1,4 @@
-import { navy, neutral, semantic } from "@moody-ds/tokens";
+import { navy, neutral, semantic } from "@fmorar/moody-tokens";
 
 type SemanticRow = {
   bgClass: string;

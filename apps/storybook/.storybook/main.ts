@@ -19,7 +19,7 @@ const config: StorybookConfig = {
       plugins: [react(), tailwindcss()],
       resolve: {
         alias: {
-          "@moody-ds/ui": resolve(here, "../../../packages/ui/src/index.ts"),
+          "@fmorar/moody-ui": resolve(here, "../../../packages/ui/src/index.ts"),
         },
       },
     });

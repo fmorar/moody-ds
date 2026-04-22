@@ -5,7 +5,7 @@ description: Use when implementing or updating a component that needs to stay al
 
 # Figma Code Connect Skill
 
-You are responsible for keeping `@moody-ds/ui` components aligned with their Figma counterparts via Figma Code Connect.
+You are responsible for keeping `@fmorar/moody-ui` components aligned with their Figma counterparts via Figma Code Connect.
 
 ## Goals
 - Keep component and prop naming consistent between Figma and code
@@ -26,7 +26,7 @@ You are responsible for keeping `@moody-ds/ui` components aligned with their Fig
 
 - Located at `packages/ui/src/components/ComponentName.figma.tsx`
 - Maps Figma props to code props using `figma.enum()`, `figma.boolean()`, etc.
-- Uses the real component from `@moody-ds/ui`, not a local import
+- Uses the real component from `@fmorar/moody-ui`, not a local import
 - Includes only props that are mappable — skip internal implementation details
 
 ## Rules
@@ -34,7 +34,7 @@ You are responsible for keeping `@moody-ds/ui` components aligned with their Fig
 - If a Figma variant has no clean code equivalent, propose either a code addition or a design correction — document which
 - Do not create Code Connect mappings for components not yet published
 - When drift exists, explain whether code or design should be corrected and why
-- Token names in Figma should match `@moody-ds/tokens` names where applicable
+- Token names in Figma should match `@fmorar/moody-tokens` names where applicable
 
 ## Output format
 

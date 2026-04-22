@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@moody-ds/ui";
+import { cn } from "@fmorar/moody-ui";
 import { docsNav } from "@/lib/docs-nav";
 
 export function Sidebar() {

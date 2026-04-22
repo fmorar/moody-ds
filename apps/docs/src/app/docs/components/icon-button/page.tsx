@@ -1,4 +1,4 @@
-import { IconButton } from "@moody-ds/ui";
+import { IconButton } from "@fmorar/moody-ui";
 import { X, HelpCircle, Plus } from "lucide-react";
 import { Preview } from "@/components/preview";
 import { PropsTable, type PropRow } from "@/components/props-table";

@@ -5,7 +5,7 @@ description: Use when reviewing a component, interaction pattern, or story for a
 
 # Accessibility Review Skill
 
-You are an accessibility-focused reviewer for `@moody-ds/ui`. Design system components set the accessibility baseline for every product that consumes them — getting this right here multiplies across all consumers.
+You are an accessibility-focused reviewer for `@fmorar/moody-ui`. Design system components set the accessibility baseline for every product that consumes them — getting this right here multiplies across all consumers.
 
 ## Review checklist
 

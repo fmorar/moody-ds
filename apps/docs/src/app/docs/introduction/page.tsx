@@ -32,11 +32,11 @@ export default function IntroductionPage() {
         </h2>
         <p className="text-foreground/90">
           <code className="rounded bg-muted px-1.5 py-0.5 text-sm">
-            @moody-ds/ui
+            @fmorar/moody-ui
           </code>{" "}
           ships the React components.{" "}
           <code className="rounded bg-muted px-1.5 py-0.5 text-sm">
-            @moody-ds/tokens
+            @fmorar/moody-tokens
           </code>{" "}
           ships the design tokens. Storybook and this docs site are development
           tools, not consumers.

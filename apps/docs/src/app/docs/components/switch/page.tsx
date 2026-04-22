@@ -1,4 +1,4 @@
-import { Switch } from "@moody-ds/ui";
+import { Switch } from "@fmorar/moody-ui";
 import { Preview } from "@/components/preview";
 import { PropsTable, type PropRow } from "@/components/props-table";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@moody-ds/ui";
+import { cn } from "@fmorar/moody-ui";
 import { useTheme, type Theme } from "./theme-provider";
 
 const options: { value: Theme; label: string; icon: React.ReactNode }[] = [

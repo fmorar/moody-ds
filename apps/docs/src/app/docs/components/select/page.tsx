@@ -1,4 +1,4 @@
-import { Avatar, Select, type SelectOption } from "@moody-ds/ui";
+import { Avatar, Select, type SelectOption } from "@fmorar/moody-ui";
 import { Preview } from "@/components/preview";
 import { PropsTable, type PropRow } from "@/components/props-table";
 

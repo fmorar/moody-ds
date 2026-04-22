@@ -1,4 +1,4 @@
-import { duration, easing, zIndex } from "@moody-ds/tokens";
+import { duration, easing, zIndex } from "@fmorar/moody-tokens";
 
 const shadows: { name: string; cssVar: string; utility: string }[] = [
   { name: "xs", cssVar: "--shadow-xs", utility: "shadow-xs" },

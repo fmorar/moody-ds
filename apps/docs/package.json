@@ -1,5 +1,5 @@
 {
-  "name": "@moody-ds/docs",
+  "name": "@fmorar/moody-docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@moody-ds/tokens": "*",
-    "@moody-ds/ui": "*",
+    "@fmorar/moody-tokens": "*",
+    "@fmorar/moody-ui": "*",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"

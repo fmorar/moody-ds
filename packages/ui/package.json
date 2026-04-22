@@ -1,10 +1,19 @@
 {
-  "name": "@moody-ds/ui",
+  "name": "@fmorar/moody-ui",
   "version": "0.1.0",
   "description": "Moody design system — React component library.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fmorar/moody-ds.git",
+    "directory": "packages/ui"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "files": [
     "dist"
   ],

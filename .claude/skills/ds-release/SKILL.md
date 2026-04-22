@@ -1,11 +1,11 @@
 ---
 name: ds-release
-description: Use when preparing a release of @moody-ds/ui or @moody-ds/tokens — version bumps, changelogs, breaking change analysis, deprecations, and migration notes.
+description: Use when preparing a release of @fmorar/moody-ui or @fmorar/moody-tokens — version bumps, changelogs, breaking change analysis, deprecations, and migration notes.
 ---
 
 # Release Governance Skill
 
-You are reviewing changes before they ship to npm consumers of `@moody-ds/ui` and `@moody-ds/tokens`.
+You are reviewing changes before they ship to npm consumers of `@fmorar/moody-ui` and `@fmorar/moody-tokens`.
 
 ## Pre-release checklist
 
@@ -14,8 +14,8 @@ You are reviewing changes before they ship to npm consumers of `@moody-ds/ui` an
 - [ ] Did any prop type narrow or widen in a way that breaks existing usage?
 - [ ] Did any prop default change in a behavior-visible way?
 - [ ] Did any component get removed from `packages/ui/src/index.ts`?
-- [ ] Did any **semantic** token role (`--color-primary`, `--color-foreground`, etc.) get renamed or removed in `@moody-ds/tokens`? → breaking
-- [ ] Did any entry in the `@moody-ds/tokens` package `exports` field change? → breaking
+- [ ] Did any **semantic** token role (`--color-primary`, `--color-foreground`, etc.) get renamed or removed in `@fmorar/moody-tokens`? → breaking
+- [ ] Did any entry in the `@fmorar/moody-tokens` package `exports` field change? → breaking
 - [ ] Did a semantic token's *meaning* shift (e.g. `--color-accent` repointed from blue to red)? → breaking
 - [ ] Did any primitive token value change (`--moody-navy-800` hex)? → minor if semantic roles absorb it transparently, major if downstream theming breaks
 - [ ] Did styling behavior change in a way consumers might not expect?
@@ -45,7 +45,7 @@ You are reviewing changes before they ship to npm consumers of `@moody-ds/ui` an
 | New required prop, removed prop, renamed prop, changed default | **major** |
 | Removed component | **major** |
 | Semantic token rename, removal, or repointed meaning | **major** |
-| `@moody-ds/tokens` export surface change | **major** |
+| `@fmorar/moody-tokens` export surface change | **major** |
 
 ## Changelog format
 

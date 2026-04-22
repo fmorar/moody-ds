@@ -6,8 +6,8 @@ A small, opinionated React design system anchored to the Moody's brand. Two publ
 
 | Package | Published | Purpose |
 | --- | --- | --- |
-| [`@moody-ds/tokens`](./packages/tokens) | ✓ | Design tokens: color primitives (navy + neutral), semantic color roles, typography stacks, spacing, radius, shadows, motion, and z-index — as CSS variables and TS constants. |
-| [`@moody-ds/ui`](./packages/ui) | ✓ | React components: `Button`, `IconButton`, `Input`, `Switch`, `Separator`, `Avatar`, `Card`, `Select`. Styled exclusively with semantic token utilities so light/dark is free. |
+| [`@fmorar/moody-tokens`](./packages/tokens) | ✓ | Design tokens: color primitives (navy + neutral), semantic color roles, typography stacks, spacing, radius, shadows, motion, and z-index — as CSS variables and TS constants. |
+| [`@fmorar/moody-ui`](./packages/ui) | ✓ | React components: `Button`, `IconButton`, `Input`, `Switch`, `Separator`, `Avatar`, `Card`, `Select`. Styled exclusively with semantic token utilities so light/dark is free. |
 
 ## Apps (dev tools, not published)
 
@@ -16,7 +16,51 @@ A small, opinionated React design system anchored to the Moody's brand. Two publ
 | [`apps/docs`](./apps/docs) | http://localhost:3000 | Next.js docs site — component reference, token reference, and the Transfer flow pattern. |
 | [`apps/storybook`](./apps/storybook) | http://localhost:6006 | Storybook 10 — per-component stories with a Light/Dark toolbar toggle. |
 
-## Getting started
+## Install in a consumer project
+
+The packages are published to **GitHub Packages** (private, free). Consumers configure `.npmrc` with a GitHub personal access token once.
+
+### 1. Create a PAT
+
+Go to https://github.com/settings/tokens → generate a classic token with the single scope **`read:packages`**. Copy it.
+
+### 2. Configure `.npmrc` in the consuming project
+
+```ini
+# .npmrc
+@fmorar:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+Export the token in your shell (or your CI secret):
+
+```sh
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxx
+```
+
+### 3. Install
+
+```sh
+npm install @fmorar/moody-ui @fmorar/moody-tokens
+```
+
+### 4. Load the tokens + use a component
+
+```tsx
+// app/layout.tsx (or wherever your root is)
+import "@fmorar/moody-tokens/tokens.css";
+
+// anywhere else
+import { Button } from "@fmorar/moody-ui";
+
+export default function Page() {
+  return <Button>Hello</Button>;
+}
+```
+
+Dark mode: toggle `document.documentElement.classList.add("dark")` — every semantic token flips.
+
+## Developing this repo
 
 Requirements: Node 20.9+, npm 11.
 
@@ -69,7 +113,7 @@ npm run typecheck    # turbo: tsc across the monorepo
 Package-level commands are available via `npm run -w <pkg> <script>`, e.g.:
 
 ```sh
-npm run -w @moody-ds/ui build   # tsup → packages/ui/dist
+npm run -w @fmorar/moody-ui build   # tsup → packages/ui/dist
 ```
 
 ## Adding a component
@@ -79,7 +123,7 @@ npm run -w @moody-ds/ui build   # tsup → packages/ui/dist
 3. Add a `Foo.stories.tsx` with at least Default + variant coverage.
 4. Add `apps/docs/src/app/docs/components/foo/page.tsx` and list it in `apps/docs/src/lib/docs-nav.ts`.
 5. Verify in both themes via the Light/Dark toggle.
-6. Run `npm run typecheck` and `npm run -w @moody-ds/ui build`.
+6. Run `npm run typecheck` and `npm run -w @fmorar/moody-ui build`.
 
 The checklist and conventions live in [`.claude/skills/ds-component/SKILL.md`](./.claude/skills/ds-component/SKILL.md).
 
@@ -99,6 +143,24 @@ Design-system conventions encoded as reusable skills (also power the AI assistan
 
 Design source: [moody-project](https://www.figma.com/design/Sn6XcCHiq9y4aLYzkJsBkW/moody-project). Variables live in two collections (**Primitives** and **Moody DS**) with Light + Dark modes; each Figma variable carries a `WEB` code syntax that maps 1:1 to the corresponding CSS custom property.
 
+## Releasing
+
+Publishing is automated via [`.github/workflows/publish.yml`](./.github/workflows/publish.yml). To cut a release:
+
+```sh
+# bump the version in both publishable package.json files
+npm version -w @fmorar/moody-tokens 0.2.0
+npm version -w @fmorar/moody-ui     0.2.0
+
+# tag + push
+git tag v0.2.0
+git push origin main --tags
+```
+
+The workflow fires on any `v*.*.*` tag push: builds both packages and publishes them to GitHub Packages under the `@fmorar` scope using the built-in `GITHUB_TOKEN` (no extra secret needed). The workflow can also be triggered manually from the Actions tab (`workflow_dispatch`).
+
+See [`ds-release`](./.claude/skills/ds-release/SKILL.md) for the versioning + breaking-change matrix.
+
 ## License
 
-MIT for the publishable packages (`@moody-ds/ui`, `@moody-ds/tokens`). Apps are private to the workspace.
+MIT for the publishable packages (`@fmorar/moody-ui`, `@fmorar/moody-tokens`). Apps are private to the workspace.
