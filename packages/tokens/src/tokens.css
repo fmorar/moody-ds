@@ -1,0 +1,162 @@
+/* Moody's design tokens — primitives + semantic roles. */
+
+:root {
+  /* Primitives: navy brand scale (anchored to #0a1264). */
+  --moody-navy-50: #e6e7ef;
+  --moody-navy-100: #ccdfff;
+  --moody-navy-200: #99bfff;
+  --moody-navy-300: #669eff;
+  --moody-navy-400: #337eff;
+  --moody-navy-500: #005eff;
+  --moody-navy-600: #0047bf;
+  --moody-navy-700: #082183;
+  --moody-navy-800: #0a1264;
+  --moody-navy-900: #05081c;
+
+  /* Primitives: neutral scale. */
+  --moody-neutral-0: #ffffff;
+  --moody-neutral-50: #f7f7f8;
+  --moody-neutral-100: #f0f0f1;
+  --moody-neutral-200: #e6e7ef;
+  --moody-neutral-300: #ced0e0;
+  --moody-neutral-400: #c8c9c7;
+  --moody-neutral-500: #76787b;
+  --moody-neutral-600: #55565a;
+  --moody-neutral-700: #3b4183;
+  --moody-neutral-800: #272829;
+  --moody-neutral-900: #000000;
+
+  /* Primitives: semantic hues. */
+  --moody-danger-500: #ba0c2f;
+  --moody-warning-500: #e35205;
+
+  /* Semantic roles (light). */
+  --color-background: var(--moody-neutral-0);
+  --color-foreground: var(--moody-neutral-800);
+  --color-muted: var(--moody-neutral-100);
+  --color-muted-foreground: var(--moody-neutral-600);
+  --color-border: var(--moody-neutral-300);
+  --color-input: var(--moody-neutral-300);
+  --color-primary: var(--moody-navy-800);
+  --color-primary-foreground: var(--moody-neutral-0);
+  --color-primary-hover: var(--moody-navy-700);
+  --color-accent: var(--moody-navy-500);
+  --color-accent-foreground: var(--moody-neutral-0);
+  --color-accent-hover: var(--moody-navy-600);
+  --color-subtle: var(--moody-navy-100);
+  --color-subtle-foreground: var(--moody-navy-800);
+  --color-ring: var(--moody-navy-500);
+  --color-destructive: var(--moody-danger-500);
+  --color-destructive-foreground: var(--moody-neutral-0);
+  --color-warning: var(--moody-warning-500);
+  /* Black (not white) on warning — white-on-#e35205 is 3.83:1 (fails AA). */
+  --color-warning-foreground: var(--moody-neutral-900);
+
+  /* Typography tokens — Geist today; real Moody's uses
+     Financier Display + GT America (proprietary, licensed). */
+  --font-sans:
+    var(--font-geist-sans, "Inter"), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    var(--font-geist-mono, "JetBrains Mono"), ui-monospace, monospace;
+  --font-serif: "Financier Display", ui-serif, Georgia, serif;
+
+  /* Spacing scale (4px base). Same numeric names as Tailwind so
+     p-4 ≡ var(--space-4). Use named tokens when the value carries
+     intent that a raw number doesn't. */
+  --space-0: 0;
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+
+  /* Border radius scale. */
+  --radius-none: 0;
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.375rem; /* 6px  — Button, Input */
+  --radius-lg: 0.5rem; /* 8px  — Card, Preview */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-2xl: 1rem; /* 16px */
+  --radius-full: 9999px;
+
+  /* Elevation — shadows, tinted with the brand navy so they read warm in
+     light mode. Overridden in .dark for stronger alpha on dark surfaces. */
+  --shadow-xs: 0 1px 2px 0 rgb(10 18 100 / 0.05);
+  --shadow-sm:
+    0 1px 3px 0 rgb(10 18 100 / 0.08),
+    0 1px 2px -1px rgb(10 18 100 / 0.06);
+  --shadow-md:
+    0 4px 6px -1px rgb(10 18 100 / 0.1),
+    0 2px 4px -2px rgb(10 18 100 / 0.08);
+  --shadow-lg:
+    0 10px 15px -3px rgb(10 18 100 / 0.1),
+    0 4px 6px -4px rgb(10 18 100 / 0.06);
+  --shadow-xl:
+    0 20px 25px -5px rgb(10 18 100 / 0.12),
+    0 8px 10px -6px rgb(10 18 100 / 0.08);
+
+  /* Motion — durations + easings. Defaults tuned for UI feedback, not drama. */
+  --duration-instant: 80ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-index — named layers so app code never guesses magic numbers. */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 20;
+  --z-dropdown: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-popover: 70;
+  --z-toast: 80;
+}
+
+.dark {
+  /* Semantic roles (dark) — brand navy becomes the surface.
+     Uses bare `.dark` selector (not `:where(.dark)`) so specificity
+     matches :root — otherwise :root wins and dark overrides silently fail. */
+  --color-background: var(--moody-navy-900);
+  --color-foreground: var(--moody-neutral-100);
+  --color-muted: var(--moody-navy-800);
+  --color-muted-foreground: var(--moody-navy-200);
+  --color-border: var(--moody-navy-700);
+  --color-input: var(--moody-navy-700);
+  --color-primary: var(--moody-navy-500);
+  --color-primary-foreground: var(--moody-neutral-0);
+  /* Darker (not lighter) on hover to keep white text at AA — navy-400 gave 3.79:1. */
+  --color-primary-hover: var(--moody-navy-600);
+  --color-accent: var(--moody-navy-200);
+  --color-accent-foreground: var(--moody-navy-900);
+  --color-accent-hover: var(--moody-navy-100);
+  --color-subtle: var(--moody-navy-700);
+  --color-subtle-foreground: var(--moody-navy-100);
+  --color-ring: var(--moody-navy-400);
+
+  /* Shadows: stronger alpha on dark surfaces so elevation still reads. */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow-sm:
+    0 1px 3px 0 rgb(0 0 0 / 0.5),
+    0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.55),
+    0 2px 4px -2px rgb(0 0 0 / 0.45);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.6),
+    0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.65),
+    0 8px 10px -6px rgb(0 0 0 / 0.55);
+}
