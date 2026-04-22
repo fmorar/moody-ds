@@ -145,7 +145,27 @@ Design-system conventions encoded as reusable skills (also power the AI assistan
 
 ## Figma
 
-Design source: [moody-project](https://www.figma.com/design/Sn6XcCHiq9y4aLYzkJsBkW/moody-project). Variables live in two collections (**Primitives** and **Moody DS**) with Light + Dark modes; each Figma variable carries a `WEB` code syntax that maps 1:1 to the corresponding CSS custom property.
+Design source: [moody-project](https://www.figma.com/design/Sn6XcCHiq9y4aLYzkJsBkW/moody-project).
+
+**Variables** live in two collections (**Primitives** and **Moody DS**) with Light + Dark modes; each Figma variable carries a `WEB` code syntax that maps 1:1 to the corresponding CSS custom property.
+
+**Components** are published as Figma component sets with full variant + boolean coverage (e.g. Button has `Variant × Size` variants and a `Disabled` boolean; Card has `HasHeader`/`HasFooter`/`Interactive` booleans). The `.figma.tsx` files in `packages/ui/src/components/` bind each Figma prop to the matching React prop via Figma Code Connect, so Dev Mode shows real usage code next to the design.
+
+### Publishing Code Connect mappings
+
+Needs a [Figma personal access token](https://www.figma.com/developers/api#access-tokens) with the `code_connect:write` scope.
+
+```sh
+export FIGMA_ACCESS_TOKEN=figd_xxxxxxxxxxxxxxxx
+
+# validate without pushing
+npm run -w @fmorar/moody-ui figma:validate
+
+# publish — uploads every Button.figma.tsx / Input.figma.tsx / … to Figma
+npm run -w @fmorar/moody-ui figma:publish
+```
+
+Designers then see real code snippets in Figma Dev Mode for each selected component.
 
 ## Releasing
 

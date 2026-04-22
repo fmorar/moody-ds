@@ -1,0 +1,9 @@
+{
+  "codeConnect": {
+    "include": ["src/components/**/*.figma.tsx"],
+    "parser": "react",
+    "importPaths": {
+      "src/components/*": "@fmorar/moody-ui"
+    }
+  }
+}
